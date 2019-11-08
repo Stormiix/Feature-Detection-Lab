@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-SET("OpenCV_DIR" "C:/opencv/build/x64/vc15/lib")
+SET("OpenCV_DIR" "C:/opencv/build/x64/Release/lib")
 SET("OpenCV_INCLUDE" "C:/opencv/build/include")
 INCLUDE_DIRECTORIES("include" "${OpenCV_INCLUDE}/")
 project( tracking )

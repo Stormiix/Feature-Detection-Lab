@@ -118,11 +118,11 @@ int main(){
 
     imshow( "Matches", frameMatches);
 
-	// Reverse the perspectiveTransform applied to the our matched frame
+	// Unwarp the detected object using the inverse homography scene -> obj
     Mat rotated;
     warpPerspective(greyFrame, rotated, findHomography(sceneCorners, objCorners, CV_RANSAC), rotated.size(), INTER_LINEAR, BORDER_CONSTANT);
 
-	// Crop and use the unwarped image as the previousFrame for the next iteration
+	// Crop and use the unwarped image as the previousFrame for the next iteration, this image only contains the newly matched object
     Rect roi(0,0,196-24,210-44);
     croppedPreviousFrame = rotated(roi);
 
